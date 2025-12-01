@@ -5190,6 +5190,43 @@ nav.navigation,
     font-size: 10px;
     line-height: 1.2;
   }
+
+  .hero-social-links {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+  }
+
+  .social-link.sora-pill,
+  .social-link.x-pill,
+  .social-link.substack-pill,
+  .social-link.instagram-pill,
+  .social-link.github-pill,
+  .social-link.linkedin-pill,
+  .social-link.gmail-pill {
+    width: 100%;
+    max-width: 100%;
+    padding: 6px 8px 6px 6px;
+    gap: 6px;
+    min-width: 0;
+    overflow: hidden;
+  }
+
+  .social-icon-wrapper {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .social-text {
+    font-size: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1;
+    min-width: 0;
+  }
 }
 
 

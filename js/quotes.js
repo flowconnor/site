@@ -197,27 +197,5 @@ const quotes = [
     "\"Never lose an opportunity of seeing anything beautiful, for beauty is God's handwriting.\" — Ralph Waldo Emerson",
     "\"Those who don't believe in magic will never find it.\" — Roald Dahl",
     "\"Keep your face always toward the sunshine—and shadows will fall behind you.\" — Walt Whitman",
-
-    // Short & Powerful
-    "\"Be the change.\" — Mahatma Gandhi",
-    "\"Choose joy.\" — Unknown",
-    "\"Love is all.\" — Rumi",
-    "\"Begin anywhere.\" — John Cage",
-    "\"Stay curious.\" — Unknown",
-    "\"Just breathe.\" — Unknown",
-    "\"Trust the process.\" — Unknown",
-    "\"Let it go.\" — Unknown",
-    "\"Keep going.\" — Unknown",
-    "\"Dream big.\" — Unknown",
-    "\"Silence is an answer.\" — Unknown",
-    "\"Less is more.\" — Mies van der Rohe",
-    "\"Quality over quantity.\" — Unknown",
-    "\"Make it happen.\" — Unknown",
-    "\"Why not?\" — Unknown",
-    "\"Explore.\" — Unknown",
-    "\"Create.\" — Unknown",
-    "\"Be kind.\" — Unknown",
-    "\"Listen.\" — Unknown",
-    "\"Focus.\" — Unknown"
 ];
 
