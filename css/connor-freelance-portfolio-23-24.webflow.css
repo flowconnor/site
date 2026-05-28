@@ -5179,64 +5179,24 @@ nav.navigation,
 }
 
 .nav-quote-wrapper {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 100%;
-  max-width: 100%;
-  text-align: center;
-  z-index: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   pointer-events: none;
-  padding: 0 100px;
+  text-align: center;
 }
 
 .nav-quote-text {
   margin: 0;
   padding: 0;
-  color: var(--neutral-200);
-  font-size: 12px;
-  font-style: italic;
-  font-weight: 300;
-  opacity: 0;
-  transition: opacity 0.5s ease-in-out;
   white-space: normal;
   text-align: center;
   width: 100%;
 }
 
-@media screen and (max-width: 991px) {
-  .nav-quote-wrapper {
-    display: flex;
-    padding: 0 80px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .nav-quote-wrapper {
-    padding: 0 60px;
-  }
-  .nav-quote-text {
-    font-size: 10px;
-  }
-}
-
 @media screen and (max-width: 479px) {
   .nav-quote-wrapper {
     display: flex;
-    padding: 0 50px;
-    left: 0;
-    right: 0;
-    transform: translateY(-50%);
-    max-width: none;
-  }
-  .nav-quote-text {
-    font-size: 10px;
-    line-height: 1.2;
   }
 
   .hero-social-links {

@@ -18,7 +18,7 @@ const quotes = [
     "\"The soul becomes dyed with the color of its thoughts.\" — Marcus Aurelius",
     "\"Man conquers the world by conquering himself.\" — Zeno of Citium",
     "\"No man is free who is not master of himself.\" — Epictetus",
-    "\"It’s not what happens to you, but how you react to it that matters.\" — Epictetus",
+    "\"It's not what happens to you, but how you react to it that matters.\" — Epictetus",
     
     // Eastern Philosophy & Spirituality
     "\"Nature does not hurry, yet everything is accomplished.\" — Lao Tzu",
@@ -28,7 +28,7 @@ const quotes = [
     "\"Be like water.\" — Lao Tzu",
     "\"Yesterday I was clever, so I wanted to change the world. Today I am wise, so I am changing myself.\" — Rumi",
     "\"What you seek is seeking you.\" — Rumi",
-    "\"Don’t be satisfied with stories, how things have gone with others. Unfold your own myth.\" — Rumi",
+    "\"Don't be satisfied with stories, how things have gone with others. Unfold your own myth.\" — Rumi",
     "\"The wound is the place where the Light enters you.\" — Rumi",
     "\"Let the beauty of what you love be what you do.\" — Rumi",
     "\"Peace comes from within. Do not seek it without.\" — Buddha",
@@ -53,7 +53,7 @@ const quotes = [
     "\"I dream my painting and I paint my dream.\" — Vincent Van Gogh",
     "\"The object of art is not to reproduce reality, but to create a reality of the same intensity.\" — Alberto Giacometti",
     "\"A work of art which did not begin in emotion is not art.\" — Paul Cezanne",
-    "\"You can’t use up creativity. The more you use, the more you have.\" — Maya Angelou",
+    "\"You can't use up creativity. The more you use, the more you have.\" — Maya Angelou",
     "\"The universe buries strange jewels deep within us all, and then stands back to see if we can find them.\" — Elizabeth Gilbert",
     "\"Inspiration exists, but it has to find you working.\" — Pablo Picasso",
     "\"Everything you can imagine is real.\" — Pablo Picasso",
@@ -128,7 +128,7 @@ const quotes = [
     "\"The morning breeze has secrets to tell you. Do not go back to sleep.\" — Rumi",
     "\"Live in each season as it passes; breathe the air, drink the drink, taste the fruit, and resign yourself to the influence of the earth.\" — Henry David Thoreau",
     "\"Every flower is a soul blossoming in nature.\" — Gerard De Nerval",
-    "\"Not just beautiful, though—the stars are like the trees in the forest, alive and breathing. And they’re watching me.\" — Haruki Murakami",
+    "\"Not just beautiful, though—the stars are like the trees in the forest, alive and breathing. And they're watching me.\" — Haruki Murakami",
     "\"For most of history, man has had to fight nature to survive; in this century he is beginning to realize that, in order to survive, he must protect it.\" — Jacques-Yves Cousteau",
     "\"Nature is not a place to visit. It is home.\" — Gary Snyder",
 
@@ -199,3 +199,33 @@ const quotes = [
     "\"Keep your face always toward the sunshine—and shadows will fall behind you.\" — Walt Whitman",
 ];
 
+function parseQuoteEntry(entry) {
+    const match = entry.match(/^"(.+)"\s*—\s*(.+)$/);
+    if (match) {
+        return { text: match[1], author: match[2] };
+    }
+    return { text: entry.replace(/^"|"$/g, ''), author: '' };
+}
+
+function renderNavQuote() {
+    const block = document.getElementById('nav-quote');
+    const textEl = document.getElementById('nav-quote-text');
+    const authorEl = document.getElementById('nav-quote-author');
+    if (!textEl || typeof quotes === 'undefined' || !quotes.length) return;
+
+    const picked = parseQuoteEntry(quotes[Math.floor(Math.random() * quotes.length)]);
+    textEl.textContent = picked.text;
+    if (authorEl) {
+        authorEl.textContent = picked.author;
+    }
+
+    const reveal = () => block?.classList.add('is-visible');
+
+    if (document.fonts && document.fonts.ready) {
+        document.fonts.ready.then(() => requestAnimationFrame(reveal));
+    } else {
+        requestAnimationFrame(reveal);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', renderNavQuote);
