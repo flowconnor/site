@@ -251,9 +251,80 @@ nav.navigation,
   justify-content: center;
 }
 
-.hero-subtitle {
+#home-section .hero-heading {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin: 0 0 14px;
+  padding: 0;
+  cursor: default;
+}
+
+#home-section .hero-avatar-link {
+  flex-shrink: 0;
+  display: block;
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--border-strong);
+  background-color: #1a2e22;
+  box-shadow:
+    0 0 0 3px var(--accent-soft),
+    var(--shadow-sm);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+#home-section .hero-avatar-link:hover {
+  border-color: var(--accent-cta);
+  box-shadow:
+    0 0 0 4px color-mix(in srgb, var(--accent-soft) 80%, transparent),
+    var(--shadow-md);
+  transform: scale(1.03);
+}
+
+#home-section .hero-avatar-link:focus-visible {
+  outline: 2px solid var(--accent-cta);
+  outline-offset: 3px;
+}
+
+#home-section .hero-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  display: block;
+  transform: scale(1.15);
+}
+
+#home-section .hero-heading-text {
+  font-size: clamp(2.25rem, 4.2vw, 3rem);
+  font-weight: 300;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+#home-section .hero-heading-role {
+  display: block;
+  margin-top: 0.4em;
+  font-size: 0.52em;
+  font-weight: 200;
+  line-height: 1.35;
+  letter-spacing: 0;
   color: var(--text-secondary);
-  max-width: 34ch;
+}
+
+.hero-subtitle {
+  color: var(--text-muted);
+  max-width: 38ch;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.6;
+  margin: 0;
 }
 
 .hero-button-wrapper {
@@ -275,76 +346,22 @@ nav.navigation,
   overflow: hidden;
 }
 
-#home-section .hero-stack-item {
-  position: relative;
-  flex: 1 1 50%;
-  width: 100%;
-  min-height: 0;
-  min-width: 0;
-  overflow: hidden;
-}
-
-.editorial-photo,
-.hero-image-stacked {
-  filter: var(--photo-editorial);
-}
-
-#home-section .hero-image-stacked {
+#home-section .hero-image-wrapper.hero-image-stack > .hero-image-stacked {
+  flex: 1 1 auto;
   width: 100%;
   height: 100%;
+  min-height: 0;
   object-fit: cover;
+  object-position: center;
   display: block;
-  transform: scale(1.08);
+  filter: saturate(1) contrast(1.04) brightness(1.02);
+  transform: scale(1.05);
   transition: filter 0.35s ease, transform 0.35s ease;
 }
 
-.hero-stack-item:first-child .hero-image-stacked {
-  filter: grayscale(100%) contrast(1.08) brightness(1.04);
-  object-position: center 40%;
-}
-
-.hero-stack-item:last-child .hero-image-stacked {
-  filter: grayscale(100%) contrast(1.1) brightness(1.04);
-  object-position: center 55%;
-}
-
-#home-section .hero-image-wrapper.hero-image-stack:hover .hero-image-stacked {
-  filter: grayscale(25%) contrast(1.08) brightness(1.04);
-}
-
-/* Subtle blend at the seam between the two photos */
-#home-section .hero-stack-item::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-}
-
-#home-section .hero-stack-item:first-child::after {
-  background: linear-gradient(
-    180deg,
-    transparent 0%,
-    transparent 78%,
-    color-mix(in srgb, var(--bg-page) 18%, transparent) 100%
-  );
-}
-
-#home-section .hero-stack-item:last-child::after {
-  background: linear-gradient(
-    180deg,
-    color-mix(in srgb, var(--bg-page) 18%, transparent) 0%,
-    transparent 22%,
-    transparent 100%
-  );
-}
-
-#home-section .hero-stack-item:first-child {
-  background-color: #1a2e22;
-}
-
-#home-section .hero-image-stacked:hover {
-  transform: scale(1.08);
+#home-section .hero-image-wrapper.hero-image-stack > .hero-image-stacked:hover {
+  filter: saturate(1.05) contrast(1.06) brightness(1.03);
+  transform: scale(1.05);
 }
 
 .hero-image,
@@ -922,6 +939,15 @@ blockquote {
     border-bottom: 1px solid var(--border-default);
   }
 
+  #home-section .hero-heading {
+    gap: 14px;
+  }
+
+  #home-section .hero-avatar-link {
+    width: 68px;
+    height: 68px;
+  }
+
   #home-section .hero-subtitle {
     max-width: none;
   }
@@ -951,6 +977,19 @@ blockquote {
 @media screen and (max-width: 479px) {
   #home-section .hero-content-wrapper {
     padding: 68px 16px 32px;
+  }
+
+  #home-section .hero-avatar-link {
+    width: 60px;
+    height: 60px;
+    border-width: 2px;
+    box-shadow:
+      0 0 0 2px var(--accent-soft),
+      var(--shadow-sm);
+  }
+
+  #home-section .hero-heading {
+    gap: 14px;
   }
 
   .hero-social-links {
