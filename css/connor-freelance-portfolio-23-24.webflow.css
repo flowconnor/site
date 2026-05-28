@@ -1356,9 +1356,7 @@ blockquote {
   margin-top: 24px;
 }
 
-.social-link.sora-pill,
 .social-link.x-pill,
-.social-link.substack-pill,
 .social-link.instagram-pill,
 .social-link.github-pill,
 .social-link.linkedin-pill,
@@ -1377,9 +1375,7 @@ blockquote {
     box-shadow 200ms ease;
 }
 
-.social-link.sora-pill:hover,
 .social-link.x-pill:hover,
-.social-link.substack-pill:hover,
 .social-link.instagram-pill:hover,
 .social-link.github-pill:hover,
 .social-link.linkedin-pill:hover,
@@ -1417,6 +1413,39 @@ blockquote {
 .social-link.nature-plus .social-text {
   font-size: 12.5px;
   letter-spacing: 0.05px;
+}
+
+.social-link.sora-pill,
+.social-link.substack-pill {
+  display: none !important;
+}
+
+.schedule-section {
+  padding: 72px 0 40px;
+}
+
+.schedule-content {
+  max-width: 860px;
+}
+
+.cal-embed-wrapper {
+  margin-top: 20px;
+  border: 1px solid var(--border-default, #cfd9d5);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--bg-elevated, #ffffff);
+  box-shadow: 0 12px 32px rgba(20, 32, 35, 0.1);
+}
+
+.cal-embed-frame {
+  width: 100%;
+  min-height: 760px;
+  border: 0;
+  display: block;
+}
+
+#cal-booking-link {
+  margin-top: 18px;
 }
 
 .social-link:hover .social-text {
@@ -2421,7 +2450,7 @@ blockquote {
   filter: brightness(75%);
 }
 
-/* Navigation overrides - Force dark background */
+/* Navigation overrides */
 .w-nav,
 .navigation,
 .container.navigation,
@@ -5215,9 +5244,7 @@ nav.navigation,
     gap: 12px;
   }
 
-  .social-link.sora-pill,
   .social-link.x-pill,
-  .social-link.substack-pill,
   .social-link.instagram-pill,
   .social-link.github-pill,
   .social-link.linkedin-pill,
